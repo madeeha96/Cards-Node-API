@@ -88,4 +88,7 @@ const CARDS_SHORT_DECK = [{ value: 'ACE', suit: 'SPADES', code: 'AS' },
 { value: 'KING', suit: 'CLUBS', code: 'KC' },
 { value: 'KING', suit: 'DIAMONDS', code: 'KD' }];
 
-export {CARDS_FULL_DECK, CARDS_SHORT_DECK}
+
+const ERROR_MESSAGE = 'The deckId was not passed or it is invalid';
+
+export {CARDS_FULL_DECK, CARDS_SHORT_DECK, ERROR_MESSAGE}

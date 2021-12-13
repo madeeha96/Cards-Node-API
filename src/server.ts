@@ -1,7 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
 import { decksRoutes } from "./routes/decks.routes";
-import bodyParser from "body-parser";
 
 const app = express();
 

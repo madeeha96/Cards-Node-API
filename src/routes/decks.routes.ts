@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import DeckController from "../controllers/DeckController";
+import {DeckController} from "../controllers/deckController";
 
 const decksRoutes = Router();
 
