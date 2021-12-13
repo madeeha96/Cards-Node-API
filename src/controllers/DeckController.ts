@@ -5,13 +5,13 @@ import { CARDS_FULL_DECK, CARDS_SHORT_DECK } from '../models/Constants';
 
 const ERROR_MESSAGE = 'The deckId was not passed or it is invalid';
 
-class Card {
+interface Card {
     "value": string;
     "suit": string;
     "code": string
 }
 
-class Deck {
+interface Deck {
     "deckId": string;
     "type": string;
     "shuffled": string;
@@ -28,8 +28,8 @@ function shuffleArray(array: any[]) {
 
 export default module.exports = {
     async create(request: Request, response: Response){
-        
-        const { type, shuffled } = request.body;
+      
+        let { type = "FULL", shuffled = false } = request.body;
 
         let cards: any;
         let remaining : number;
@@ -40,6 +40,7 @@ export default module.exports = {
         }else {
             cards = CARDS_SHORT_DECK;
             remaining = 36;
+            type = "SHORT"
         }
 
         if(shuffled) shuffleArray(cards);

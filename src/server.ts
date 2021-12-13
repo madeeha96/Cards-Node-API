@@ -1,14 +1,14 @@
 import express from "express";
 import mongoose from "mongoose";
 import { decksRoutes } from "./routes/decks.routes";
+import bodyParser from "body-parser";
 
 const app = express();
 
-mongoose.connect(
-  "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false"
-);
+mongoose.connect('mongodb://deck:27017/deck-of-cards');
 
-app.use(express.json());
+app.use(express.json())
+app.use(express.urlencoded())
 
 app.use(decksRoutes);
 
