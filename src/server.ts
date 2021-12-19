@@ -4,11 +4,13 @@ import { decksRoutes } from "./routes/decks.routes";
 
 const app = express();
 
-mongoose.connect('mongodb://deck:27017/deck-of-cards');
+mongoose.connect("mongodb://deck:27017/deck-of-cards");
 
-app.use(express.json())
-app.use(express.urlencoded())
+app.use(express.json());
+app.use(express.urlencoded());
 
 app.use(decksRoutes);
 
 app.listen(3333);
+
+export default app;
