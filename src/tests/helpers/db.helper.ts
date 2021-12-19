@@ -2,7 +2,8 @@ import mongoose from "mongoose";
 
 export const basicSetup = () => {
   beforeEach((done) => {
-    mongoose.connect("mongodb://localhost:27017/deck-of-cards", () => done());
+    mongoose.connect("mongodb://deck:27017/deck-of-cards", (error) => done());
+    
   });
 
   afterEach((done) => {

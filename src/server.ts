@@ -12,5 +12,3 @@ app.use(express.urlencoded());
 app.use(decksRoutes);
 
 app.listen(3333);
-
-export default app;
